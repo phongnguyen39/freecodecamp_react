@@ -80,26 +80,26 @@ Examples:
 
 Javascript function
 
-const MyComponent = function() {
-    return(
-        <div></div>
-    )
-}
-
-ES6 class syntax
-
-class MyComponent extends React.Component {
-    
-    constructor(props) {
-        super(props);
-    }
-    
-    render() {
+    const MyComponent = function() {
         return(
             <div></div>
         )
     }
-}
+
+ES6 class syntax
+
+    class MyComponent extends React.Component {
+        
+        constructor(props) {
+            super(props);
+        }
+        
+        render() {
+            return(
+                <div></div>
+            )
+        }
+    }
 
 Advantages of using ES6 syntax extends React.Component, so useful features such as:
 * local state
@@ -112,61 +112,62 @@ Also called, "Component composition", what components are created and how they a
 Child components are rendered in a parent component by writing it has a custom HTML tag within the parent
 
 Example.  Here Navbar, Dashboard, and Footer are children to the App component
-return (
- <App>
-  <Navbar />
-  <Dashboard />
-  <Footer />
- </App>
-)
+
+    return (
+    <App>
+    <Navbar />
+    <Dashboard />
+    <Footer />
+    </App>
+    )
 
 Important syntax:
 It is common practice in react to write child components using ES6 arrow functions (Javascript function)
 
-const ChildComponent =()=> {
-    return(
-        <div></div>
-    )
-}
+    const ChildComponent =()=> {
+        return(
+            <div></div>
+        )
+    }
 
 Review of the various components that can be composed and compiled within React:
 
 JSX element
 
-const JSXelement = <div></div>
+    const JSXelement = <div></div>
 
 Stateless Javascript function
 
-const JSfunction =()=> {
-    return(
-        <div></div>
-    )
-}
-
-const JSfunction = function(){
-    return(
-        <div></div>
-    )
-}
-
-ES6 Class component
-
-class ClassyComponent extends React.Component {
-    constructor(props){
-        super(props)
-    }
-
-    render() {
+    const JSfunction =()=> {
         return(
             <div></div>
         )
     }
-}
+
+    const JSfunction = function(){
+        return(
+            <div></div>
+        )
+    }
+
+ES6 Class component
+
+    class ClassyComponent extends React.Component {
+        constructor(props){
+            super(props)
+        }
+
+        render() {
+            return(
+                <div></div>
+            )
+        }
+    }
 
 Rendering ES6 Class Component using ReactDOM:
 
-ReactDOM.render(<AppComponent />,document.getElementById('root'))
+    ReactDOM.render(<AppComponent />,document.getElementById('root'))
 
 compared to JSX element render (notice the custom HTML tag was used above)
 
-ReactDOM.render(JSXelement, document.getElementById('root'))
+    ReactDOM.render(JSXelement, document.getElementById('root'))
