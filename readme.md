@@ -8,6 +8,7 @@ React has its own markup language.  JSX is an extension of Javascript that write
 
 Throughout the notes, syntax unique to or important to React will be called out with "Important Syntax"
 
+# JSX Syntax
 Important syntax:
 Javascript is notated in code with curly braces, {'Javascript code'}.  
 ReactDOM.render(JSX,document.getElementById('root')) is a virtual DOM.  This renders an element on a webpage. React only updates specific parts of the actual DOM.
@@ -54,3 +55,52 @@ Important syntax (differences between JSX and HTML syntax):
 ** JSX should be written as <br><br /> which is a self-closing tag.  
 ** JSX rules: 1) any JSX element can be written with a self-closing tag and 2) every eleemnt must be closed
 **  A solid example is that when writing HTML, you can simply put <br> or <hr> without closing it.  HTML will still create a line-break or add a horizontal line.  In JSX, you must close them!  <br /> <hr /> respectively
+
+# React Components
+
+React components can be created two ways:
+1. Using Javascript functions
+2. Using ES6 class syntax 
+
+and they can be stateless vs stateful
+
+Variants possible:
+1. Stateless component created with Javascript function
+2. Stateless component created with ES6 class syntax
+3. Stateful component created with Javascript function
+4. Stateful component created with ES6 class syntax
+
+Stateless components in applications can receive data and render it, but does not manage or track changes to that data.
+
+Important syntax:
+The Javascript function must start with a capital letter.
+This function should return a JSX component.  Return()
+
+Examples:
+
+Javascript function
+
+const MyComponent = function() {
+    return(
+        <div></div>
+    )
+}
+
+ES6 class syntax
+
+class MyComponent extends React.component {
+    
+    constructor(props) {
+        super(props);
+    }
+    
+    render() {
+        return(
+            <div></div>
+        )
+    }
+}
+
+Advantages of using ES6 syntax extends React.Component, so useful features such as:
+* local state
+* lifecycle hooks
