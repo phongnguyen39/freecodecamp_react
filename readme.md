@@ -104,3 +104,27 @@ class MyComponent extends React.component {
 Advantages of using ES6 syntax extends React.Component, so useful features such as:
 * local state
 * lifecycle hooks
+
+## Parent and child components
+
+Also called, "Component composition", what components are created and how they are nested affects the user UI experience. "Compose" and "nested" are used interchangeably
+
+Child components are rendered in a parent component by writing it has a custom HTML tag within the parent
+
+Example.  Here Navbar, Dashboard, and Footer are children to the App component
+return (
+ <App>
+  <Navbar />
+  <Dashboard />
+  <Footer />
+ </App>
+)
+
+Important syntax:
+It is common practice in react to write child components using ES6 arrow functions (Javascript function)
+
+const ChildComponent =()=> {
+    return(
+        <div></div>
+    )
+}
