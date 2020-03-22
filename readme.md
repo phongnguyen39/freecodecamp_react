@@ -128,3 +128,37 @@ const ChildComponent =()=> {
         <div></div>
     )
 }
+
+Review of the various components that can be composed and compiled within React:
+
+JSX element
+
+const JSXelement = <div></div>
+
+Stateless Javascript function
+
+const JSfunction =()=> {
+    return(
+        <div></div>
+    )
+}
+
+const JSfunction = function(){
+    return(
+        <div></div>
+    )
+}
+
+ES6 Class component
+
+class ClassyComponent extends React.component {
+    constructor(props){
+        super(props)
+    }
+
+    render() {
+        return(
+            <div></div>
+        )
+    }
+}
