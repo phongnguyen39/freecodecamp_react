@@ -2,7 +2,7 @@
 
 # Freecodecamp - React Lessons
 
-These are my notes from following the curriculum.  
+These are my notes from following the curriculum.  Though this is a markdown file that is rendered by Github, it might be better to read it as a text file.
 
 React has its own markup language.  JSX is an extension of Javascript that writes HTML can be directly written in.  JSX is not valid Javascript so it has to be compiled.  Then transpiled by packages like Babel to fully render.
 
@@ -29,3 +29,28 @@ const JSX =
 </div>"
 
 {/*Commenting within JSX*/}
+
+Facts about ReactDOM.render(componentToRender, targerNode)
+1. It's a method that is part of ReactDOM's API
+2. This method renders JSX components to the HTML DOM 
+3. JSX elements must be delcared by before using ReactDOM.render just like how we declare variables
+
+Example use of ReactDOM.render():
+
+    const componentToRender = 
+    <div>
+        <p1>Hi</p1>
+    </div>
+
+    ReactDOM.render(componentToRender, document.getElementById('someIDinHTML'))
+
+Important syntax (differences between JSX and HTML syntax):
+* HTML class vs React className.  When employing classes in JSX, you must use 'className'
+* All HTML attributes become camelCase:
+** onclick => onClick
+** onchange => onChange
+* JSX uses self-closing tags:
+** HTML can be written as <br> or <br><br />; <br></br> shouldn't be used because it doesn't contain any content
+** JSX should be written as <br><br /> which is a self-closing tag.  
+** JSX rules: 1) any JSX element can be written with a self-closing tag and 2) every eleemnt must be closed
+**  A solid example is that when writing HTML, you can simply put <br> or <hr> without closing it.  HTML will still create a line-break or add a horizontal line.  In JSX, you must close them!  <br /> <hr /> respectively
