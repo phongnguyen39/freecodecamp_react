@@ -48,8 +48,8 @@ Example use of ReactDOM.render():
 Important syntax (differences between JSX and HTML syntax):
 * HTML class vs React className.  When employing classes in JSX, you must use 'className'
 * All HTML attributes become camelCase:
-** onclick => onClick
-** onchange => onChange
+**onclick => onClick
+**onchange => onChange
 * JSX uses self-closing tags:
 ** HTML can be written as <br> or <br><br />; <br></br> shouldn't be used because it doesn't contain any content
 ** JSX should be written as <br><br /> which is a self-closing tag.  
