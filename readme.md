@@ -1,6 +1,8 @@
-*Source: https://www.freecodecamp.org/learn/front-end-libraries/react/create-a-simple-jsx-element*
+*Source: https://www.freecodecamp.org/learn/front-end-libraries/react/create-a-simple-jsx-element*. 
 
 # Freecodecamp - React Lessons
+
+These are my notes from following the curriculum.  
 
 React has its own markup language.  JSX is an extension of Javascript that writes HTML can be directly written in.  JSX is not valid Javascript so it has to be compiled.  Then transpiled by packages like Babel to fully render.
 
@@ -26,3 +28,4 @@ const JSX =
   <p>Paragraph Three</p>
 </div>"
 
+{/*Commenting within JSX*/}
