@@ -13,23 +13,23 @@ Important syntax:
 Javascript is notated in code with curly braces, {'Javascript code'}.  
 ReactDOM.render(JSX,document.getElementById('root')) is a virtual DOM.  This renders an element on a webpage. React only updates specific parts of the actual DOM.
 
-///// JSX example /////
+JSX example
 
-const JSX = <h1>Hello World</h1>;  // Renders Hello World
+    const JSX = <h1>Hello World</h1>;  // Renders Hello World
 
 
 Multiple JSX elements must be nested in a single wraper otherwise it will not transpile.
 
 Important syntax:
 
-const JSX = 
-"<div>
-  <p>Paragraph One</p>
-  <p>Paragraph Two</p>
-  <p>Paragraph Three</p>
-</div>"
+    const JSX = 
+        <div>
+        <p>Paragraph One</p>
+        <p>Paragraph Two</p>
+        <p>Paragraph Three</p>
+        </div>
 
-{/*Commenting within JSX*/}
+    {/*Commenting within JSX*/}
 
 Facts about ReactDOM.render(componentToRender, targerNode)
 1. It's a method that is part of ReactDOM's API
@@ -171,3 +171,32 @@ Rendering ES6 Class Component using ReactDOM:
 compared to JSX element render (notice the custom HTML tag was used above)
 
     ReactDOM.render(JSXelement, document.getElementById('root'))
+
+
+## Pass Props to a Stateless Functional Component
+
+"Props" or properties are passed to child components, specifically stateless functional components
+
+Examples
+
+JSX element
+    const Welcome = (props) => <h1>Hello, {props.user}!</h1>
+
+Stateless Functional Component
+    const CurrentDate = () => {
+        return(
+            <div>
+                <p>Current Date is: </p>
+            </div>
+        )
+    }
+
+## Pass Array as Props
+
+    <ParentComponent>
+        <ChildComponent colors={['blue','red','yellow']} />
+    </ParentComponent >
+
+
+
+
