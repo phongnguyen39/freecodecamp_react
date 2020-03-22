@@ -88,7 +88,7 @@ const MyComponent = function() {
 
 ES6 class syntax
 
-class MyComponent extends React.component {
+class MyComponent extends React.Component {
     
     constructor(props) {
         super(props);
@@ -151,7 +151,7 @@ const JSfunction = function(){
 
 ES6 Class component
 
-class ClassyComponent extends React.component {
+class ClassyComponent extends React.Component {
     constructor(props){
         super(props)
     }
@@ -162,3 +162,11 @@ class ClassyComponent extends React.component {
         )
     }
 }
+
+Rendering ES6 Class Component using ReactDOM:
+
+ReactDOM.render(<AppComponent />,document.getElementById('root'))
+
+compared to JSX element render (notice the custom HTML tag was used above)
+
+ReactDOM.render(JSXelement, document.getElementById('root'))
