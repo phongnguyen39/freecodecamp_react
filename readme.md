@@ -20,9 +20,9 @@ Multiple JSX elements must be nested in a single wraper otherwise it will not tr
 Important syntax:
 
 const JSX = 
-<div>
+"<div>
   <p>Paragraph One</p>
   <p>Paragraph Two</p>
   <p>Paragraph Three</p>
-</div>
+</div>"
 
