@@ -51,8 +51,11 @@ Important syntax (differences between JSX and HTML syntax):
     * onclick => onClick
     * onchange => onChange
 * JSX uses self-closing tags:
-    * HTML can be written as <br> or <br><br />; <br></br> shouldn't be used because it doesn't contain any content
-    * JSX should be written as <br><br /> which is a self-closing tag.  
+    * HTML can be written as 
+        <br> or <br><br />; 
+        <br></br> shouldn't be used because it doesn't contain any content
+    * JSX should be written as 
+        <br><br /> which is a self-closing tag.  
     * JSX rules: 
         1. any JSX element can be written with a self-closing tag and 
         2. every eleemnt must be closed
