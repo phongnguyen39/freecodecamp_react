@@ -202,6 +202,40 @@ Stateless Functional Component
         <ChildComponent colors={['blue','red','yellow']} />
     </ParentComponent >
 
+Array methods can be used like join()
+
+    const ChildComponent = (props) => <p>}{props.colors.join(', ')}</p>\
+    {/*output will be <p>gree, blue, red*/}
+
+Important syntax:
+
+The stateless functional component will contain in the HTML string portion {props.attribute}
+The ES6 class component will have the HTML attribute
+
+    const List = (props) => {
+    { /* change code below this line */ }
+    return <p>{props.tasks.join(', ')}</p>
+    { /* change code above this line */ }
+    };
+
+    class ToDo extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+        <div>
+            <h1>To Do Lists</h1>
+            <h2>Today</h2>
+            { /* change code below this line */ }
+            <List tasks={['Do dishes','sleep','eat']} />
+                <h2>Tomorrow</h2>
+            <List tasks={['laundry','jump','car repair']} />
+            { /* change code above this line */ }
+        </div>
+        );
+    }
+    };
 
 
 
