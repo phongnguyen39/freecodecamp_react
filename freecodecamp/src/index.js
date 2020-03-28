@@ -8,18 +8,18 @@ import * as serviceWorker from './serviceWorker';
 const JSX =
   <div><p> Paragraph One</p><p>Paragraph Two</p><p>Paragraph Three</p></div>
 
-
-
 class Descriptions extends React.Component {
   render() {
     return (
       <div>
         <h3>What are you seeing on this webpage?</h3>
-        <ul>
-          <li>Red boxes represents components</li>
-          <li>They were applied with classNames</li>
-        </ul>
+        <p>Red boxes represents <i>parent components</i></p>
+        <p>Gray boxes represents <i>child components</i></p>
+        <p>They were applied with <i>classNames</i></p>
         <br />
+        {/* <svg>
+          <circle cx='50' cy='50' r='40' stroke='green' stroke-width='4' fill='yellow' />
+        </svg> */}
       </div>
     )
   }
@@ -36,7 +36,7 @@ const MyComponent = function () {
 class JSXvsFunction extends Component {
   render() {
     return (
-      <div>
+      <div className='c_components'>
         <h3>pure JSX element</h3>
         <pre><code>const JsxELement = <div><h1>I am a JSX element</h1></div></code>
         </pre>
@@ -51,6 +51,7 @@ const ChildComponent = () => {
   return (
     <div className='c_components'>
       <p>I'm a child component</p>
+      <JSXvsFunction />
     </div>
   )
 }
@@ -58,7 +59,7 @@ const ChildComponent = () => {
 const ParentComponent = () => {
   return (
     <div className='p_components'>
-      <p1>I'm a parent component. Below me is my child</p1>
+      <p1>I'm a parent component</p1>
       <ChildComponent />
     </div>
   )
@@ -70,12 +71,14 @@ class Es6Component extends React.Component {
 
   render() {
     return (
-      <div className='components'>
-        <h1>Learning React</h1>
-        <a href='https://github.com/phongnguyen39/freecodecamp_react' alt="Github link to readme" target='_blank'>For full notes see Github repo</a>
-        <Descriptions />
-        <JSXvsFunction />
-        <ParentComponent />
+      <div className='container'>
+        <div className='p_components'>
+          <h1>Learning React</h1>
+          <a href='https://github.com/phongnguyen39/freecodecamp_react' alt="Github link to readme" target='_blank'>For full notes see Github repo</a>
+          <Descriptions array={['rate','fart']}/>
+          
+          <ParentComponent />
+        </div>
       </div>
     )
   }
