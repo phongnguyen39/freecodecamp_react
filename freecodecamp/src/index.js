@@ -1,4 +1,5 @@
 import React from 'react';
+import {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -15,8 +16,39 @@ const MyComponent = function () {
   )
 }
 
+const ChildComponent=()=> {
+  return(
+    <div className='components'>
+      <p>I'm a child component</p>
+    </div>
+  )
+}
+
+const ParentComponent=()=>{
+  return(
+    <div className='components'>
+      <p1>I'm a parent component. Below me is my child</p1>
+      <ChildComponent />
+      </div>
+  )
+}
+class Es6Component extends React.Component {
+  // constructor() {
+  //   super(props)
+  // }
+  
+  render() {
+    return(
+      <div className='components'>
+        <h1>Learning React</h1>
+        <ParentComponent />
+      </div>
+    ) 
+  }
+}
+
 ReactDOM.render(
-  <MyComponent></MyComponent>,
+  <Es6Component />,
   document.getElementById('root')
 );
 
