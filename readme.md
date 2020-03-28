@@ -2,7 +2,7 @@
 
 # Freecodecamp - React Lessons
 
-These are my notes from following the curriculum.  Though this is a markdown file that is rendered by Github, it might be better to read it as a text file.
+These are my notes from following the curriculum.  Though this is a markdown file that is rendered by Github, it might be better to read it as a text file.  All credits go back to freecodecamp.  
 
 React has its own markup language.  JSX is an extension of Javascript that writes HTML can be directly written in.  JSX is not valid Javascript so it has to be compiled.  Then transpiled by packages like Babel to fully render.
 
@@ -35,6 +35,7 @@ Facts about ReactDOM.render(componentToRender, targerNode)
 1. It's a method that is part of ReactDOM's API
 2. This method renders JSX components to the HTML DOM 
 3. JSX elements must be delcared by before using ReactDOM.render just like how we declare variables
+4. When rendering a simple variable vs component enter componentToRender without <> brackets.  Components you use <> brackets
 
 Example use of ReactDOM.render():
 
@@ -52,7 +53,7 @@ Important syntax (differences between JSX and HTML syntax):
     * onchange => onChange
 * JSX uses self-closing tags:
     * HTML can be written as 
-        <br> or <br><br />; 
+        <br> or <br><br /> 
         <br></br> shouldn't be used because it doesn't contain any content
     * JSX should be written as 
         <br><br /> which is a self-closing tag.  
@@ -238,4 +239,5 @@ The ES6 class component will have the HTML attribute
     };
 
 
+https://www.freecodecamp.org/learn/front-end-libraries/react/use-default-props
 
