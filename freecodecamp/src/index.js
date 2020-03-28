@@ -37,11 +37,12 @@ class JSXvsFunction extends Component {
   render() {
     return (
       <div className='c_components'>
-        <h3>pure JSX element</h3>
-        <pre><code>const JsxELement = <div><h1>I am a JSX element</h1></div></code>
-        </pre>
-        <h3>Functional component</h3>
-        <pre><code>const FunctionalComponent =()=> {<div></div>}</code></pre>
+        <h3>Different types of components in React</h3>
+        <h5 className='c_components'>pure JSX element syntax <pre><code>const JsxELement = </code></pre></h5>
+        
+
+        <h5 className='c_components'>Stateless Functional component syntax <pre><code>const FunctionalComponent =()=> {}</code></pre></h5>
+        
       </div>
     )
   }
@@ -75,8 +76,8 @@ class Es6Component extends React.Component {
         <div className='p_components'>
           <h1>Learning React</h1>
           <a href='https://github.com/phongnguyen39/freecodecamp_react' alt="Github link to readme" target='_blank'>For full notes see Github repo</a>
-          <Descriptions array={['rate','fart']}/>
-          
+          <Descriptions array={['rate', 'fart']} />
+
           <ParentComponent />
         </div>
       </div>
