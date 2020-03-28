@@ -1,5 +1,10 @@
-.components {
+.p_components {
   border: 1px solid red;
+  padding: 5px;
+  margin: 5px;
+}
+.c_components {
+  background-color: lightgray;
   padding: 5px;
   margin: 5px;
 }
