@@ -1,3 +1,5 @@
+
+
 .container {
   padding: 10px;
   text-align: center;
@@ -5,7 +7,7 @@
 .p_components {
   border: 1px solid red;
   padding: 5px;
-  margin: 5px;
+  margin: 100px;
 }
 .c_components {
   background-color: lightgray;
@@ -15,7 +17,7 @@
 }
 
 .c_components:hover {
-  background-color: white;
+  background: linear-gradient(rgb(196, 199, 171),rgb(243, 247, 213),rgb(196, 199, 171));
 }
 
 .App {
