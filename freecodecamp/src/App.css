@@ -1,6 +1,8 @@
 .container {
   padding: 10px;
   text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
 .p_components {
   border: 1px solid rgb(214, 214, 214);
@@ -64,4 +66,27 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: white;
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 0px; */
+}
+
+.footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  background: red;
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 0px; */
 }

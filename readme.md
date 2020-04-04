@@ -241,3 +241,12 @@ The ES6 class component will have the HTML attribute
 
 https://www.freecodecamp.org/learn/front-end-libraries/react/use-default-props
 
+# Default Props
+
+Default props passes some default value if none is provided.
+
+Important syntax:
+
+MyComponent.defaultProps = {
+    someKey: someVal
+}

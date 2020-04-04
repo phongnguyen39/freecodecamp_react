@@ -5,6 +5,31 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const github = <a href='https://www.github.com' target='_blank' >Github</a>
+
+const URLs =()=> {
+  return(
+    <div>
+
+    </div>
+  )
+}
+
+class Footer extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className='footer'>
+        {/* <h1>FOoter</h1> */}
+        <URLs></URLs>
+      </div>
+    )
+  }
+}
+
 class JSX extends React.Component {
   
   constructor(props){
@@ -105,6 +130,9 @@ const CurrentDate = (props) => {
   )
 }
 
+
+
+
 const DaysOfWeek =(props)=>{
   return(
     <div className = 'c_components'>
@@ -129,11 +157,26 @@ class Calendar extends React.Component {
           <li>Stateless functional component</li>
           </ul>
           <p>The ES6 class component has the constructor, super, and props.  .   The stateless functional component has the props and date attribute.  It is nested in the ES6 component.</p>
-          <DaysOfWeek dow = {["Mo","Tu","We","TH","Fr","Sa","Su"]} />
+          <DaysOfWeek dow = {["Mo","Tu","We","Th","Fr","Sa","Su"]} />
       </div>
     )
   }
 }
+
+const DefaultProp = (props) => {
+  return (
+    <div className = 'p_components'>
+      <p>Default Prop</p>
+      <p>.defaultProps passes a default value as a prop through a component if none is provided.   It can be overidden when another value is explicitly passed.</p>
+      <p className = 'c_components'>{props.someKey}</p>
+    </div>
+  )
+}
+
+DefaultProp.defaultProps = {
+  someKey: "I'm a default prop value"
+}
+
 
 
 
@@ -146,13 +189,16 @@ class MainApp extends React.Component {
     return (
       <div className='container'>
         <div>
-          <h1>React Playground</h1>
+          <h1 className = 'header'>React Playground</h1>
           <a href='https://github.com/phongnguyen39/freecodecamp_react' alt="Github link to readme" target='_blank'>For full notes see Github repo</a>
           <Descriptions array={['rate', 'fart']} />
           <CompTypes />
           <ParentComponent />
           {/* <PassingProps /> */}
           <Calendar  />
+          <DefaultProp />
+          <DefaultProp someKey='Overidden Prop'/>
+          <Footer />
         </div>
       </div>
     )
