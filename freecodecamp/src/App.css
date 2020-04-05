@@ -84,9 +84,17 @@ li {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
-  background: red;
+  background: white;
+  opacity: .97;
   height: 50px;
   width: 100%;
   margin: 0 auto;
   /* padding: 0px; */
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+  margin-left: 5%;
+  margin-right: 5%;
 }

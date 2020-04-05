@@ -10,7 +10,9 @@ const github = <a href='https://www.github.com' target='_blank' >Github</a>
 const URLs =()=> {
   return(
     <div>
-
+      <a href='https://www.github.com' target='_blank' >Github</a>
+      <a href='https://www.linkedin.com/in/phongnguyenmha' target='_blank' >Linkedin</a>
+      <a href='mailto: developer.phong@gmail.com' target='_blank' >Email</a>
     </div>
   )
 }
