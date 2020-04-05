@@ -32,27 +32,23 @@ class Footer extends React.Component {
   }
 }
 
-class JSX extends React.Component {
+// class SVGs extends React.Component {
   
-  constructor(props){
-    super(props);
-  }
+//   constructor(props){
+//     super(props);
+//   }
   
-  render(){
-    console.log('JSX called');
-    return (
-      <div>
-        <p> Paragraph One</p>
-        <p>Paragraph Two</p>
-        <p>Paragraph Three</p>
-        <svg>
-          <circle cx='50' cy='50' r='40' stroke='green' stroke-width='4' fill='yellow' />
-        </svg>
-      </div>
-    );
-  }
-    
-}
+//   render(){
+//     return (
+//       <div>
+      
+//         <svg>
+//           <circle cx='50' cy='50' r='20' stroke='green' stroke-width='1' fill='yellow' />
+//         </svg>
+//       </div>
+//     );
+//   }
+// }
 
 
 // const jax =()=>{
@@ -171,12 +167,29 @@ const DefaultProp = (props) => {
       <p>Default Prop</p>
       <p>.defaultProps passes a default value as a prop through a component if none is provided.   It can be overidden when another value is explicitly passed.</p>
       <p className = 'c_components'>{props.someKey}</p>
+      <p>Type something below to override the default</p>
     </div>
   )
 }
 
 DefaultProp.defaultProps = {
   someKey: "I'm a default prop value"
+}
+
+class UsingThis extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return (
+      <div className = 'p_components'>
+        <h3>Passing Props from ES6 Class Component to ES6 Class Components</h3>
+        <p>Previous examples have been passing from ES6 Class to stateless function components</p>
+        <p>Major difference is the use of "this" in front of the prop. </p>
+        <p className="c_components">{this.props.thisExample}</p>
+      </div>
+    )
+  }
 }
 
 
@@ -193,6 +206,7 @@ class MainApp extends React.Component {
         <div>
           <h1 className = 'header'>React Playground</h1>
           <a href='https://github.com/phongnguyen39/freecodecamp_react' alt="Github link to readme" target='_blank'>For full notes see Github repo</a>
+          {/* <SVGs /> */}
           <Descriptions array={['rate', 'fart']} />
           <CompTypes />
           <ParentComponent />
@@ -200,6 +214,7 @@ class MainApp extends React.Component {
           <Calendar  />
           <DefaultProp />
           <DefaultProp someKey='Overidden Prop'/>
+          <UsingThis thisExample='this.props.data' />
           <Footer />
         </div>
       </div>
