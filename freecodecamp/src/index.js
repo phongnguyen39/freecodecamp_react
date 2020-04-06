@@ -238,8 +238,9 @@ class SecondStatefulComponent extends React.Component {
   }
   handleClick() {
     this.setState({
-      name: 'Bloop!'
+      initialState: 'Bloop!'
     })
+    console.log('boo')
   }
 
   render() {
@@ -248,7 +249,7 @@ class SecondStatefulComponent extends React.Component {
         <h3>Updating the initial state</h3>
         <p>This is done by using this.setState(). This method updates the value in the state object initially set in the constructor</p>
         <button onClick={this.handleClick}>Click to Update Initial State</button>
-        <p className='c_components'>Something</p>
+      <p className='c_components'>{this.state.initialState}</p>
       </div>
     )
   }
