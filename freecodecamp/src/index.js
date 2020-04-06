@@ -228,7 +228,31 @@ class FirstStatefulComponent extends React.Component {
   }
 }
 
+class SecondStatefulComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      initialState: 'Initial State'
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({
+      name: 'Bloop!'
+    })
+  }
 
+  render() {
+    return (
+      <div className='p_components'>
+        <h3>Updating the initial state</h3>
+        <p>This is done by using this.setState(). This method updates the value in the state object initially set in the constructor</p>
+        <button onClick={this.handleClick}>Click to Update Initial State</button>
+        <p className='c_components'>Something</p>
+      </div>
+    )
+  }
+}
 
 class MainApp extends React.Component {
   // constructor() {
@@ -252,6 +276,7 @@ class MainApp extends React.Component {
           <UsingThis thisExample='this.props.data' />
           <AboutState />
           <FirstStatefulComponent />
+          <SecondStatefulComponent />
 
           <Footer />
         </div>
