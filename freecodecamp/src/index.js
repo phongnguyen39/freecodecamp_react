@@ -5,6 +5,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// TODO: deployment isn't working.  Missing build  / node_modules likely due to the git ignore https://app.netlify.com/sites/freecodecamp-react/deploys/5e8abb794587b60485a89303
+
 const github = <a href='https://www.github.com' target='_blank' >Github</a>
 
 const URLs = () => {
@@ -195,10 +197,10 @@ class UsingThis extends React.Component {
 const AboutState = () => {
   return (
     <div className='p_components'>
-      
-        <p>A stateless functional component is any function you write which accepts props and returns JSX.</p>
-        <p>A stateless component, on the other hand, is a class that extends React.Component, but does not use internal state (covered in the next challenge).</p> 
-        <p>Finally, a stateful component is a class component that does maintain its own internal state. You may see stateful components referred to simply as components or React components.</p>
+
+      <p>A stateless functional component is any function you write which accepts props and returns JSX.</p>
+      <p>A stateless component, on the other hand, is a class that extends React.Component, but does not use internal state (covered in the next challenge).</p>
+      <p>Finally, a stateful component is a class component that does maintain its own internal state. You may see stateful components referred to simply as components or React components.</p>
       <a href='https://www.freecodecamp.org/learn/front-end-libraries/react/review-using-props-with-stateless-functional-components'>Ref: freecodecamp</a>
     </div>
   )
@@ -207,23 +209,23 @@ const AboutState = () => {
 class FirstStatefulComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state= {
+    this.state = {
       stateType: 'Stateful with this.state.data written directly into the return statement',
       stateType2: 'Stateful with this.state.data written in the render before the return statement. Writing it this way allows you to perform Javascript functions.  The this.state.data is assigned to avariable without curly braces'
     }
   }
-  
+
   render() {
     return (
-    <div className ='p_components'>
-      <h3>Stateful Components</h3>
-    <p>State syntax is within the constructor.  this.state = key value object</p>
-      <p className= 'c_components'>{this.state.stateType}</p>
-      <p>The state is encapsulated to it's own component.  It can be passed as props to another component though.</p>
-      <p>When the state data of a component is updated then it updates the virtual DOM which then updates the DOM.  This allows the UI to change only where needed</p>
-      <p className= 'c_components'>{this.state.stateType2}</p>
+      <div className='p_components'>
+        <h3>Stateful Components</h3>
+        <p>State syntax is within the constructor.  this.state = key value object</p>
+        <p className='c_components'>{this.state.stateType}</p>
+        <p>The state is encapsulated to it's own component.  It can be passed as props to another component though.</p>
+        <p>When the state data of a component is updated then it updates the virtual DOM which then updates the DOM.  This allows the UI to change only where needed</p>
+        <p className='c_components'>{this.state.stateType2}</p>
 
-    </div>
+      </div>
     )
   }
 }
@@ -240,7 +242,7 @@ class SecondStatefulComponent extends React.Component {
     this.setState({
       initialState: 'Bloop!'
     })
-    console.log('boo')
+    console.log('SecondStatefulComponent.this.handleCLick method called')
   }
 
   render() {
@@ -249,16 +251,105 @@ class SecondStatefulComponent extends React.Component {
         <h3>Updating the initial state</h3>
         <p>This is done by using this.setState(). This method updates the value in the state object initially set in the constructor</p>
         <button onClick={this.handleClick}>Click to Update Initial State</button>
-      <p className='c_components'>{this.state.initialState}</p>
+        <p className='c_components'>{this.state.initialState}</p>
+        <p>Note: Binding of 'this' to a Class Method was used to set the state.  When the user clicks on the onClick atttribute it calls this.handleClick variable that is assigned to this.handleClick.bind(this).  </p>
+        <code>this.handleClick = this.handleClick.bind(this)</code>
       </div>
     )
   }
 }
 
+class ToggleState extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false
+    }
+    this.toggleVisibility = this.toggleVisibility.bind(this);
+  }
+  toggleVisibility() {
+    this.setState(state => ({
+      visibility: !state.visibility
+    }))
+  }
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div className='p_components'>
+          <h3>Toggling Elements using State</h3>
+          <p>The method toggleVisibility() toggles the state attribute visibility from true to false and vice versa</p>
+          <p>The render code block has an if:else statement that renders depending on if visibility is true or false</p>
+          <button onClick={this.toggleVisibility}>Toggle</button>
+          <p className='c_components'>False</p>
+        </div>
+      )
+    } else {
+      return (
+        <div className='p_components'>
+          <h3>Toggling Elements using State</h3>
+          <p>The method toggleVisibility() toggles the state attribute visibility from true to false and vice versa</p>
+          <p>The render code block has an if:else statement that renders depending on if visibility is true or false</p>
+          <button onClick={this.toggleVisibility}>Toggle</button>
+          <p className='c_components'>True</p>
+        </div>
+      )
+    }
+  }
+}
+
+class ClickCounter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    }
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
+    this.reset = this.reset.bind(this);
+  }
+  increment() {
+    this.setState(state => ({
+      count: state.count + 1
+      // count: state.count++  // doesn't work
+    }))
+  }
+  decrement() {
+    this.setState(state => ({
+      count: state.count - 1
+      // count: state.count--  // doesn't work
+    }))
+  }
+  reset() {
+    this.setState(state => ({
+      count: 0
+    }))
+  }
+  render() {
+    return (
+      <div className='p_components'>
+        <h3>Click Counter</h3>
+        <p>These three buttons each have its own method that modifies the state.</p>
+        <p className='c_components'>{this.state.count}</p>
+        <button onClick={this.increment}>Increment+</button>
+        <button onClick={this.decrement}>Decrement-</button>
+        <button onClick={this.reset}>Reset</button>
+      </div>
+    )
+  }
+}
+
+class ControlledInput extends React.Component {
+  constructor(prpos) {
+    super(props);
+    this.state = {
+      input: ''
+    }
+  }
+}
 class MainApp extends React.Component {
-  // constructor() {
-  //   super(props)
-  // }
+  constructor(props) {
+    super(props)
+  }
 
   render() {
     return (
@@ -278,6 +369,8 @@ class MainApp extends React.Component {
           <AboutState />
           <FirstStatefulComponent />
           <SecondStatefulComponent />
+          <ToggleState />
+          <ClickCounter />
 
           <Footer />
         </div>
