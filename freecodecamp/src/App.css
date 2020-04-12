@@ -5,8 +5,11 @@ html, body {
 }
 
 .hero {
+  display: block;
   width: 100vw;
   height: 100vh;
+  text-align: center;
+  color: white;
   background-color: rgba(41, 54, 70, 0.952)
 }
 

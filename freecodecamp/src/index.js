@@ -3,10 +3,10 @@ import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Hero from './Hero';
 import Descriptions from './Descriptions';
 import DefaultProp from './DefaultProp';
 import CompTypes from './CompTypes';
-import ParentComponent from './ParentComponent';
 import UsingThis from './UsingThis';
 import Calendar from './Calendar';
 import Footer from './Footer';
@@ -18,25 +18,13 @@ import ClickCounter from './ClickCounter';
 import ControlledInput from './ControlledInput';
 import ControlledForm from './ControlledForm';
 import StatePropsComponents from './StatePropsComponents';
+import PassingProps from './PassingCallbacks';
 import * as serviceWorker from './serviceWorker';
 
 // TODO: deployment isn't working.  Missing build  / node_modules likely due to the git ignore https://app.netlify.com/sites/freecodecamp-react/deploys/5e8abb794587b60485a89303
 
 const github = <a href='https://www.github.com' target='_blank' >Github</a>
 
-class Hero extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return(
-      <div className="hero"> 
-        <p>Sometext</p>       
-      </div>
-    )
-  }
-}
 
 // class SVGs extends React.Component {
 
@@ -83,24 +71,22 @@ class MainApp extends React.Component {
       <div>
         <div>
           <h1 className='header'>React Playground</h1>
+          <Hero />
           <div className='container'>
-          {/* <Hero /> */}
-          <Descriptions />
-          <CompTypes />
-          <ParentComponent />
-          {/* <PassingProps /> */}
-          <Calendar />
-          <DefaultProp />
-          <DefaultProp someKey='Overidden Prop' />
-          <UsingThis thisExample='this.props.data' />
-          <AboutState />
-          <FirstStatefulComponent />
-          <SecondStatefulComponent />
-          <ToggleState />
-          <ClickCounter />
-          <ControlledInput />
-          <ControlledForm />
-          <StatePropsComponents />
+            <CompTypes />
+            {/* <PassingProps /> */}
+            <Calendar />
+            <DefaultProp />
+            <DefaultProp someKey='Overidden Prop' />
+            <UsingThis thisExample='this.props.data' />
+            <AboutState />
+            <FirstStatefulComponent />
+            <SecondStatefulComponent />
+            <ToggleState />
+            <ClickCounter />
+            <ControlledInput />
+            <ControlledForm />
+            <StatePropsComponents />
           </div>
 
           <Footer />

@@ -5,7 +5,7 @@ import {Component} from 'react'
 const ChildComponent = () => {
   return (
     <div className='c_components'>
-      <p>I'm a child component</p>
+      <p>Child component</p>
 
     </div>
   )
@@ -14,7 +14,7 @@ const ChildComponent = () => {
 const ParentComponent = () => {
   return (
     <div className='p_components'>
-      <h3>I'm a parent component</h3>
+      <h3>Parent component</h3>
       <ChildComponent />
     </div>
   )
