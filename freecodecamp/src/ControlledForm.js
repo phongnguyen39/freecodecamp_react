@@ -29,6 +29,7 @@ class ControlledForm extends React.Component {
         return(
             <div className = 'p_components'>
                 <h3>Controlled Form</h3>
+                <p>This form has two methods:  handleChange() and handleSubmit. The handleChange is an atttribute for the input and the handleSumbit is an attribute sits on the form.</p>
                 <form onSubmit={this.handleSubmit}>
                     <input value={this.state.input} onChange={this.handleChange} placeholder='type something'/>
                     <button type='submit'>Submit</button>

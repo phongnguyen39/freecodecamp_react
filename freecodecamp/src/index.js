@@ -17,6 +17,7 @@ import ToggleState from './ToggleState';
 import ClickCounter from './ClickCounter';
 import ControlledInput from './ControlledInput';
 import ControlledForm from './ControlledForm';
+import StatePropsComponents from './StatePropsComponents';
 import * as serviceWorker from './serviceWorker';
 
 // TODO: deployment isn't working.  Missing build  / node_modules likely due to the git ignore https://app.netlify.com/sites/freecodecamp-react/deploys/5e8abb794587b60485a89303
@@ -99,6 +100,7 @@ class MainApp extends React.Component {
           <ClickCounter />
           <ControlledInput />
           <ControlledForm />
+          <StatePropsComponents />
           </div>
 
           <Footer />
