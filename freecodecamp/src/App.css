@@ -51,6 +51,10 @@ html, body {
   pointer-events: none;
 }
 
+li {
+ list-style: none; 
+}
+
 
 .header {
   position: -webkit-sticky;
