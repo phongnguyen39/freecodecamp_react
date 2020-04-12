@@ -3,8 +3,16 @@ import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import URLs from './URLs'
+import DefaultProp from './DefaultProp';
 import CompTypes from './CompTypes';
+import ParentComponent from './ParentComponent';
+import UsingThis from './UsingThis';
+import Calendar from './Calendar';
+import Footer from './Footer';
+import AboutState from './AboutState';
+import FirstStatefulComponent from './FirstStatefulComponent';
+import SecondStatefulComponent from './SecondStatefulComponent';
+import ToggleState from './ToggleState';
 import * as serviceWorker from './serviceWorker';
 
 // TODO: deployment isn't working.  Missing build  / node_modules likely due to the git ignore https://app.netlify.com/sites/freecodecamp-react/deploys/5e8abb794587b60485a89303
@@ -20,21 +28,6 @@ class Hero extends React.Component {
     return(
       <div className="hero"> 
         <p>Sometext</p>       
-      </div>
-    )
-  }
-}
-
-class Footer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className='footer'>
-        {/* <h1>FOoter</h1> */}
-        <URLs></URLs>
       </div>
     )
   }
@@ -97,195 +90,8 @@ const MyComponent = function () {
 
 
 
-const ChildComponent = () => {
-  return (
-    <div className='c_components'>
-      <p>I'm a child component</p>
 
-    </div>
-  )
-}
 
-const ParentComponent = () => {
-  return (
-    <div className='p_components'>
-      <h3>I'm a parent component</h3>
-      <ChildComponent />
-    </div>
-  )
-}
-
-const CurrentDate = (props) => {
-  return (
-    <div className='c_components'>
-      <p>Current Date: {props.date}</p>
-    </div>
-  )
-}
-
-const DaysOfWeek = (props) => {
-  return (
-    <div className='c_components'>
-      <p>{props.dow.join(' | ')}</p>
-    </div>
-  )
-}
-
-class Calendar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className='p_components'>
-        <h3>This is an example of passing properties between components</h3>
-        <h3>Calendar Component</h3>
-        <CurrentDate date={Date()} />
-        <p>This Calendar component consist of two parts:</p>
-        <ul>
-          <li>ES6 class component</li>
-          <li>Stateless functional component</li>
-        </ul>
-        <p>The ES6 class component has the constructor, super, and props.  .   The stateless functional component has the props and date attribute.  It is nested in the ES6 component.</p>
-        <DaysOfWeek dow={["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]} />
-      </div>
-    )
-  }
-}
-
-const DefaultProp = (props) => {
-  return (
-    <div className='p_components'>
-      <p>Default Prop</p>
-      <p>.defaultProps passes a default value as a prop through a component if none is provided.   It can be overidden when another value is explicitly passed.</p>
-      <p className='c_components'>{props.someKey}</p>
-      <p>Type something below to override the default</p>
-    </div>
-  )
-}
-
-DefaultProp.defaultProps = {
-  someKey: "I'm a default prop value"
-}
-
-class UsingThis extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className='p_components'>
-        <h3>Passing Props from ES6 Class Component to ES6 Class Components</h3>
-        <p>Previous examples have been passing from ES6 Class to stateless function components</p>
-        <p>Major difference is the use of "this" in front of the prop. </p>
-        <p className="c_components">{this.props.thisExample}</p>
-      </div>
-    )
-  }
-}
-
-const AboutState = () => {
-  return (
-    <div className='p_components'>
-
-      <p>A stateless functional component is any function you write which accepts props and returns JSX.</p>
-      <p>A stateless component, on the other hand, is a class that extends React.Component, but does not use internal state (covered in the next challenge).</p>
-      <p>Finally, a stateful component is a class component that does maintain its own internal state. You may see stateful components referred to simply as components or React components.</p>
-      <a href='https://www.freecodecamp.org/learn/front-end-libraries/react/review-using-props-with-stateless-functional-components'>Ref: freecodecamp</a>
-    </div>
-  )
-}
-
-class FirstStatefulComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      stateType: 'Stateful with this.state.data written directly into the return statement',
-      stateType2: 'Stateful with this.state.data written in the render before the return statement. Writing it this way allows you to perform Javascript functions.  The this.state.data is assigned to avariable without curly braces'
-    }
-  }
-
-  render() {
-    return (
-      <div className='p_components'>
-        <h3>Stateful Components</h3>
-        <p>State syntax is within the constructor.  this.state = key value object</p>
-        <p className='c_components'>{this.state.stateType}</p>
-        <p>The state is encapsulated to it's own component.  It can be passed as props to another component though.</p>
-        <p>When the state data of a component is updated then it updates the virtual DOM which then updates the DOM.  This allows the UI to change only where needed</p>
-        <p className='c_components'>{this.state.stateType2}</p>
-
-      </div>
-    )
-  }
-}
-
-class SecondStatefulComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      initialState: 'Initial State'
-    }
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick() {
-    this.setState({
-      initialState: 'Bloop!'
-    })
-    console.log('SecondStatefulComponent.this.handleCLick method called')
-  }
-
-  render() {
-    return (
-      <div className='p_components'>
-        <h3>Updating the initial state</h3>
-        <p>This is done by using this.setState(). This method updates the value in the state object initially set in the constructor</p>
-        <button onClick={this.handleClick}>Click to Update Initial State</button>
-        <p className='c_components'>{this.state.initialState}</p>
-        <p>Note: Binding of 'this' to a Class Method was used to set the state.  When the user clicks on the onClick atttribute it calls this.handleClick variable that is assigned to this.handleClick.bind(this).  </p>
-        <code>this.handleClick = this.handleClick.bind(this)</code>
-      </div>
-    )
-  }
-}
-
-class ToggleState extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visibility: false
-    }
-    this.toggleVisibility = this.toggleVisibility.bind(this);
-  }
-  toggleVisibility() {
-    this.setState(state => ({
-      visibility: !state.visibility
-    }))
-  }
-  render() {
-    if (this.state.visibility) {
-      return (
-        <div className='p_components'>
-          <h3>Toggling Elements using State</h3>
-          <p>The method toggleVisibility() toggles the state attribute visibility from true to false and vice versa</p>
-          <p>The render code block has an if:else statement that renders depending on if visibility is true or false</p>
-          <button onClick={this.toggleVisibility}>Toggle</button>
-          <p className='c_components'>False</p>
-        </div>
-      )
-    } else {
-      return (
-        <div className='p_components'>
-          <h3>Toggling Elements using State</h3>
-          <p>The method toggleVisibility() toggles the state attribute visibility from true to false and vice versa</p>
-          <p>The render code block has an if:else statement that renders depending on if visibility is true or false</p>
-          <button onClick={this.toggleVisibility}>Toggle</button>
-          <p className='c_components'>True</p>
-        </div>
-      )
-    }
-  }
-}
 
 class ClickCounter extends React.Component {
   constructor(props) {
