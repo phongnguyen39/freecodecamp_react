@@ -3,20 +3,26 @@ import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import URLs from './URLs'
+import CompTypes from './CompTypes';
 import * as serviceWorker from './serviceWorker';
 
 // TODO: deployment isn't working.  Missing build  / node_modules likely due to the git ignore https://app.netlify.com/sites/freecodecamp-react/deploys/5e8abb794587b60485a89303
 
 const github = <a href='https://www.github.com' target='_blank' >Github</a>
 
-const URLs = () => {
-  return (
-    <div>
-      <a href='https://www.github.com' target='_blank' >Github</a>
-      <a href='https://www.linkedin.com/in/phongnguyenmha' target='_blank' >Linkedin</a>
-      <a href='mailto: developer.phong@gmail.com' target='_blank' >Email</a>
-    </div>
-  )
+class Hero extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return(
+      <div className="hero"> 
+        <p>Sometext</p>       
+      </div>
+    )
+  }
 }
 
 class Footer extends React.Component {
@@ -63,6 +69,7 @@ class Footer extends React.Component {
 
 
 class Descriptions extends React.Component {
+  
   render() {
     return (
       <div className='p_components'>
@@ -70,6 +77,7 @@ class Descriptions extends React.Component {
         <p>Outer boxes are <i>parent components</i></p>
         <p>Gray boxes represents <i>child components</i></p>
         <p>They were applied with <i>classNames</i></p>
+    
         <br />
         {/* <svg>
           <circle cx='50' cy='50' r='40' stroke='green' stroke-width='4' fill='yellow' />
@@ -87,22 +95,7 @@ const MyComponent = function () {
   )
 }
 
-class CompTypes extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    return (
-      <div className='p_components'>
-        <h3>Different types of components in React</h3>
-        <h5 className='c_components' >pure JSX element syntax <pre><code>const JsxELement = </code></pre></h5>
-        {/* <h5 className='c_components' onClick={jax}>pure JSX element syntax {jax}</h5> */}
-        <h5 className='c_components'>Stateless Functional component syntax <pre><code>const FunctionalComponent =()=> {}</code></pre></h5>
-        <h5 className='c_components'>ES6 class component syntax <pre><code>class Es6ClassComponent extends React.Component{}</code></pre></h5>
-      </div>
-    )
-  }
-}
+
 
 const ChildComponent = () => {
   return (
@@ -116,7 +109,7 @@ const ChildComponent = () => {
 const ParentComponent = () => {
   return (
     <div className='p_components'>
-      <p1>I'm a parent component</p1>
+      <h3>I'm a parent component</h3>
       <ChildComponent />
     </div>
   )
@@ -129,9 +122,6 @@ const CurrentDate = (props) => {
     </div>
   )
 }
-
-
-
 
 const DaysOfWeek = (props) => {
   return (
@@ -339,11 +329,23 @@ class ClickCounter extends React.Component {
 }
 
 class ControlledInput extends React.Component {
-  constructor(prpos) {
+  constructor(props) {
     super(props);
     this.state = {
       input: ''
     }
+  }
+
+  render(){
+    return(
+    <div className = 'p_components'>
+      <h3>Controlled Inputs</h3>
+      <form>
+        <input type='text' placeholder='type something here'></input>
+      </form>
+    <p className='c_components'>{this.state.input}</p>
+    </div>
+    )
   }
 }
 class MainApp extends React.Component {
@@ -353,12 +355,14 @@ class MainApp extends React.Component {
 
   render() {
     return (
-      <div className='container'>
+      <div>
         <div>
           <h1 className='header'>React Playground</h1>
-          <a href='https://github.com/phongnguyen39/freecodecamp_react' alt="Github link to readme" target='_blank'>For full notes see Github repo</a>
-          {/* <SVGs /> */}
-          <Descriptions array={['rate', 'fart']} />
+          <div className='container'>
+          
+          
+          {/* <Hero /> */}
+          <Descriptions />
           <CompTypes />
           <ParentComponent />
           {/* <PassingProps /> */}
@@ -371,6 +375,8 @@ class MainApp extends React.Component {
           <SecondStatefulComponent />
           <ToggleState />
           <ClickCounter />
+          <ControlledInput />
+          </div>
 
           <Footer />
         </div>
