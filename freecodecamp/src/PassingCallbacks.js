@@ -50,8 +50,11 @@ class PassingCallBacks extends React.Component {
             <div className='p_components'>
                 <h3>Passing Callback Methods as Props</h3>
                 <p>We can pass handler functions or methods to child components from the parent component too.  These functions are passed as this.props.</p>
+                
                 <GetInput input={this.state.input} handleChange={this.handleChange} />
                 <RenderInput input={this.state.input} />
+
+                <p>There are three components used here.  One has an onChange method (callback) that is called as you type something into the input field.</p>
             </div>
         )
     }
