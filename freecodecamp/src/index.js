@@ -25,7 +25,6 @@ import * as serviceWorker from './serviceWorker';
 
 const github = <a href='https://www.github.com' target='_blank' >Github</a>
 
-
 // class SVGs extends React.Component {
 
 //   constructor(props){
@@ -87,6 +86,7 @@ class MainApp extends React.Component {
             <ControlledInput />
             <ControlledForm />
             <StatePropsComponents />
+            <PassingProps />
           </div>
 
           <Footer />
