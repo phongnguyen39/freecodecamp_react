@@ -7,7 +7,7 @@ class GetInput extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className='c_components' >
                 <h4>Get Input:</h4>
                 <input value={this.props.input}
                     onChange={this.props.handleChange} />
@@ -22,7 +22,7 @@ class RenderInput extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className='c_components' >
                 <h4>Input Render:</h4>
                 <p>{this.props.input}</p>
             </div>

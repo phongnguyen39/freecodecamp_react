@@ -3,22 +3,24 @@ import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Hero from './Hero';
-import Descriptions from './Descriptions';
-import DefaultProp from './DefaultProp';
-import CompTypes from './CompTypes';
-import UsingThis from './UsingThis';
-import Calendar from './Calendar';
-import Footer from './Footer';
-import AboutState from './AboutState';
-import FirstStatefulComponent from './FirstStatefulComponent';
-import SecondStatefulComponent from './SecondStatefulComponent';
-import ToggleState from './ToggleState';
-import ClickCounter from './ClickCounter';
-import ControlledInput from './ControlledInput';
-import ControlledForm from './ControlledForm';
-import StatePropsComponents from './StatePropsComponents';
-import PassingProps from './PassingCallbacks';
+import Hero from './components/Hero';
+import Descriptions from './components/Descriptions';
+import DefaultProp from './components/DefaultProp';
+import CompTypes from './components/CompTypes';
+import UsingThis from './components/UsingThis';
+import Calendar from './components/Calendar';
+import Footer from './components/Footer';
+import AboutState from './components/AboutState';
+import FirstStatefulComponent from './components/FirstStatefulComponent';
+import SecondStatefulComponent from './components/SecondStatefulComponent';
+import ToggleState from './components/ToggleState';
+import ClickCounter from './components/ClickCounter';
+import ControlledInput from './components/ControlledInput';
+import ControlledForm from './components/ControlledForm';
+import StatePropsComponents from './components/StatePropsComponents';
+import PassingProps from './components/PassingCallbacks';
+import LifeCycle from './components/LifeCycle';
+import CompWillMount from './components/CompWillMount';
 import * as serviceWorker from './serviceWorker';
 
 // TODO: deployment isn't working.  Missing build  / node_modules likely due to the git ignore https://app.netlify.com/sites/freecodecamp-react/deploys/5e8abb794587b60485a89303
@@ -87,6 +89,8 @@ class MainApp extends React.Component {
             <ControlledForm />
             <StatePropsComponents />
             <PassingProps />
+            <LifeCycle />
+            <CompWillMount />
           </div>
 
           <Footer />
